@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 import keras_preprocessing
+import PIL
 
 
 keras_file = "sign_numbers_model.h5"
