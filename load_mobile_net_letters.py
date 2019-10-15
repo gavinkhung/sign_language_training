@@ -8,7 +8,8 @@ keras_file = "sign_letters_model.h5"
 loaded_model_mines = tf.keras.models.load_model(keras_file)
 loaded_model = tf.keras.applications.mobilenet.MobileNet()
 
-img_path = "asl-alphabet/testing_data/C/C_test.JPG"
+img_path = "asl/testing_data/C/C_test.JPG"
+#img_path = "asl-alphabet/testing_data/C/C_test.JPG"
 #img_path = "photos/a.jpg"
 
 print(img_path)
@@ -22,7 +23,7 @@ prediction_mines = loaded_model_mines.predict(pImg, batch_size=1000)[0].tolist()
 print("prediction results: ")
 labels = ['A', 'B', 'C', 'D', 'del', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'nothing', 'O', 'P', 'Q', 'R', 'S', 'space', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 for i in range(len(prediction_mines)):
-    print(labels[i],"\t",prediction_mines[i])
+    print(labels[i],"\t\t",prediction_mines[i])
 
 total = 0
 for num in prediction_mines:
