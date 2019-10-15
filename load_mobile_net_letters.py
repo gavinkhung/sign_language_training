@@ -4,11 +4,12 @@ import keras_preprocessing
 import PIL
 
 
-keras_file = "sign_numbers_model.h5"
+keras_file = "sign_letters_model.h5"
 loaded_model_mines = tf.keras.models.load_model(keras_file)
 loaded_model = tf.keras.applications.mobilenet.MobileNet()
 
-img_path = "photos/7/IMG_4146.JPG"
+img_path = "asl-alphabet/testing_data/C/C_test.JPG"
+#img_path = "photos/a.jpg"
 
 print(img_path)
 
@@ -19,7 +20,7 @@ pImg = tf.keras.applications.mobilenet.preprocess_input(img_array)
 prediction_mines = loaded_model_mines.predict(pImg, batch_size=1000)[0].tolist()
 
 print("prediction results: ")
-labels = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+labels = ['A', 'B', 'C', 'D', 'del', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'nothing', 'O', 'P', 'Q', 'R', 'S', 'space', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 for i in range(len(prediction_mines)):
     print(labels[i],"\t",prediction_mines[i])
 
