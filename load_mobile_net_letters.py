@@ -6,7 +6,6 @@ import PIL
 
 keras_file = "sign_letters_model.h5"
 loaded_model_mines = tf.keras.models.load_model(keras_file)
-loaded_model = tf.keras.applications.mobilenet.MobileNet()
 
 img_path = "asl/testing_data/C/C_test.JPG"
 #img_path = "asl-alphabet/testing_data/C/C_test.JPG"
